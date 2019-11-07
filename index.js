@@ -130,4 +130,25 @@ const someArr3 = [6, 8, 3, 4, 2, 5, 7, 1, 9, 11]
 const testResultFunctionMissing = missing(someArr3)
 console.log(` in ['${someArr3}'] missed: ${testResultFunctionMissing}`)
 
-
+const isBalanced = (str) => {
+  let k = 0
+  let j = 0
+  let resultIsBalance = false
+  const arrStr = str.split(' ').join('').split('')
+  for (let i = 0; i < arrStr.length; i++) {
+    if (arrStr[i] === '{') {
+      k++
+    }
+    if (arrStr[i] === '}') {
+      j++
+    }
+    if (k < j) { return false }
+  }
+  if (k === j) {
+    resultIsBalance = true
+  }
+  return resultIsBalance
+}
+const someStr3 = 'foo{ bar { baz } boo }'
+const testResultFuncIsBalanced = isBalanced(someStr3)
+console.log(`'${someStr3}' balanced: ${testResultFuncIsBalanced}`)
