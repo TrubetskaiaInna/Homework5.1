@@ -2,7 +2,7 @@ const isPrime = (n) => {
   if (n === 0 || n === 1) {
     return false
   } else {
-    let arr = []
+    const arr = []
     const steps = Math.round(Math.sqrt(n))
     for (let i = 2; i <= steps; i++) {
       arr.push(n % i)
@@ -89,6 +89,7 @@ const indexOf = (arr, element) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === element) {
       resultIndexOf = i
+      break
     }
   }
   return resultIndexOf
@@ -110,7 +111,9 @@ const isPalindrome = (str) => {
   for (let i = 0; i < arrStr.length; i++) {
     if (arrStr[i] === arrStrRev[i]) {
       arrIsPalindrome.push('true')
-    } else (arrIsPalindrome.push('false'))
+    } else {
+      (arrIsPalindrome.push('false'))
+    }
     if (arrIsPalindrome[i] === 'false') {
       resultIsPalindrome = false
       break
@@ -121,4 +124,23 @@ const isPalindrome = (str) => {
 const someStr2 = 'A man a plan a canal Panama'
 const testResultFuncIsPalindr = isPalindrome(someStr2)
 console.log(` '${someStr2}' is palindrome: ${testResultFuncIsPalindr}`)
+
+const missing = (arr) => {
+  let resultMissing = undefined
+  arr.sort((a, b) => a - b)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[0] !== 1) {
+      resultMissing = 1
+    } else {
+      if ((arr[i + 1] - arr[i]) === 2) {
+        resultMissing = i + 2
+      }
+    }
+  }
+  return resultMissing
+}
+const someArr3 = [6, 8, 3, 4, 2, 5, 7, 1, 9, 11]
+const testResultFunctionMissing = missing(someArr3)
+console.log(` in ['${someArr3}'] missed: ${testResultFunctionMissing}`)
+
 
