@@ -74,3 +74,15 @@ const reverse = (str) => {
   return str
 }
 console.log(reverse('abcd'))
+
+const indexOf = (arr, element) => {
+  let resultIndexOf = -1
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === element) {
+      resultIndexOf = i
+    }
+  }
+  return resultIndexOf
+}
+console.log(indexOf([0, 1, 2, 7, 4, 5], 7))
+console.log(indexOf([0, 1, 2, 7, 4, 5], 9))
