@@ -18,3 +18,12 @@ const isPrime = (n) => {
   }
 }
 console.log(isPrime(13))
+
+const factorial = (n) => {
+  let resultFactorial = 1
+  while (n) {
+    resultFactorial *= n--
+  }
+  return resultFactorial
+}
+console.log(factorial(6))
