@@ -52,17 +52,10 @@ const testFunctionFib = fib(someN3)
 console.log(` ${someN3}  fibonacci number: ${testFunctionFib}`)
 
 const isSorted = (arr) => {
-  const arrIsSorted = []
-  for (let j = 0; j < arr.length - 1; j++) {
-    if (arr[j] < arr[j + 1]) {
-      arrIsSorted.push('true')
-    } else {arrIsSorted.push('false')}
-  }
   let resultIsSorted = true
-  for (let j = 0; j < arr.length; j++) {
-    if (arrIsSorted[j] === 'false') {
+  for (let j = 0; j < arr.length - 1; j++) {
+    if (arr[j] > arr[j + 1]) {
       resultIsSorted = false
-      break
     }
   }
   return resultIsSorted
@@ -101,7 +94,6 @@ console.log(` index ${someElement}  in [${someArr2}]: ${testFunctionIndexOf}`)
 
 const isPalindrome = (str) => {
   str = str.toLowerCase()
-  const arrIsPalindrome = []
   const arrStrRev = []
   const arrStr = str.split(' ').join('').split('')
   for (let i = arrStr.length - 1; i >= 0; i--) {
@@ -109,12 +101,7 @@ const isPalindrome = (str) => {
   }
   let resultIsPalindrome = true
   for (let i = 0; i < arrStr.length; i++) {
-    if (arrStr[i] === arrStrRev[i]) {
-      arrIsPalindrome.push('true')
-    } else {
-      (arrIsPalindrome.push('false'))
-    }
-    if (arrIsPalindrome[i] === 'false') {
+    if (arrStr[i] !== arrStrRev[i]) {
       resultIsPalindrome = false
       break
     }
