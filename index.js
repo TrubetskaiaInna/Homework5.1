@@ -17,7 +17,9 @@ const isPrime = (n) => {
     return resultIsPrime
   }
 }
-console.log(isPrime(13))
+const someN1 = 13
+const testFunctionIsPrime = isPrime(someN1)
+console.log(`is prime ${someN1} : ${testFunctionIsPrime}`)
 
 const factorial = (n) => {
   let resultFactorial = 1
@@ -26,7 +28,9 @@ const factorial = (n) => {
   }
   return resultFactorial
 }
-console.log(factorial(6))
+const someN2 = 6
+const testFunctionFactorial = factorial(someN2)
+console.log(`factorial ${someN2} = ${testFunctionFactorial}`)
 
 const fib = (n) => {
   if (n === 0) {
@@ -43,26 +47,29 @@ const fib = (n) => {
     return f2
   }
 }
-console.log(fib(3))
+const someN3 = 3
+const testFunctionFib = fib(someN3)
+console.log(` ${someN3}  fibonacci number: ${testFunctionFib}`)
 
 const isSorted = (arr) => {
-  let arrIsSorted = []
+  const arrIsSorted = []
   for (let j = 0; j < arr.length - 1; j++) {
     if (arr[j] < arr[j + 1]) {
       arrIsSorted.push('true')
     } else {arrIsSorted.push('false')}
   }
   let resultIsSorted = true
-  for (let i = 0; i < arrIsSorted.length; i++) {
-    if (arrIsSorted[i] === 'false') {
+  for (let j = 0; j < arr.length; j++) {
+    if (arrIsSorted[j] === 'false') {
       resultIsSorted = false
       break
     }
   }
   return resultIsSorted
 }
-console.log(isSorted([1, 9, -8, 0, -Infinity]))
-console.log(isSorted([-Infinity, -9, 0, 1, 10, 45]))
+const someArr = [-Infinity, -9, 0, 1, 10, 45]
+const testFunctionIsSorted = isSorted(someArr)
+console.log(` [${someArr}]  is sorted: ${testFunctionIsSorted}`)
 
 const reverse = (str) => {
   const arrReverseResult = []
@@ -73,7 +80,9 @@ const reverse = (str) => {
   }
   return str
 }
-console.log(reverse('abcdef'))
+const someStr = 'abcdef'
+const testFunctionReverse = reverse(someStr)
+console.log(` ${someStr}  reverse: ${testFunctionReverse}`)
 
 const indexOf = (arr, element) => {
   let resultIndexOf = -1
@@ -84,5 +93,32 @@ const indexOf = (arr, element) => {
   }
   return resultIndexOf
 }
-console.log(indexOf([0, 1, 2, 7, 4, 5], 7))
-console.log(indexOf([0, 1, 2, 7, 4, 5], 9))
+const someArr2 = [0, 1, 2, 7, 4, 5]
+const someElement = 7
+const testFunctionIndexOf = indexOf(someArr2, someElement)
+console.log(` index ${someElement}  in [${someArr2}]: ${testFunctionIndexOf}`)
+
+const isPalindrome = (str) => {
+  str = str.toLowerCase()
+  const arrIsPalindrome = []
+  const arrStrRev = []
+  const arrStr = str.split(' ').join('').split('')
+  for (let i = arrStr.length - 1; i >= 0; i--) {
+    arrStrRev.push(arrStr[i])
+  }
+  let resultIsPalindrome = true
+  for (let i = 0; i < arrStr.length; i++) {
+    if (arrStr[i] === arrStrRev[i]) {
+      arrIsPalindrome.push('true')
+    } else (arrIsPalindrome.push('false'))
+    if (arrIsPalindrome[i] === 'false') {
+      resultIsPalindrome = false
+      break
+    }
+  }
+  return resultIsPalindrome
+}
+const someStr2 = 'A man a plan a canal Panama'
+const testResultFuncIsPalindr = isPalindrome(someStr2)
+console.log(` '${someStr2}' is palindrome: ${testResultFuncIsPalindr}`)
+
