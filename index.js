@@ -63,3 +63,14 @@ const isSorted = (arr) => {
 }
 console.log(isSorted([1, 9, -8, 0, -Infinity]))
 console.log(isSorted([-Infinity, -9, 0, 1, 10, 45]))
+
+const reverse = (str) => {
+  const arrReverseResult = []
+  const arrStr = str.slice('')
+  for (let i = arrStr.length - 1; i >= 0; i--) {
+    arrReverseResult.push(arrStr[i])
+    str = arrReverseResult.join('')
+  }
+  return str
+}
+console.log(reverse('abcd'))
