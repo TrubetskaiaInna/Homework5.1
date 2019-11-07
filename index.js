@@ -27,3 +27,20 @@ const factorial = (n) => {
   return resultFactorial
 }
 console.log(factorial(6))
+
+const fib = (n) => {
+  if (n === 0) {
+    return 0
+  } else {
+    let f
+    let f1 = 1
+    let f2 = 1
+    for (let i = 3; i <= n; i++) {
+      f = f2 + f1
+      f1 = f2
+      f2 = f
+    }
+    return f2
+  }
+}
+console.log(fib(3))
