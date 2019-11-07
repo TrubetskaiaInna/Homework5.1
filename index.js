@@ -44,3 +44,22 @@ const fib = (n) => {
   }
 }
 console.log(fib(3))
+
+const isSorted = (arr) => {
+  let arrIsSorted = []
+  for (let j = 0; j < arr.length - 1; j++) {
+    if (arr[j] < arr[j + 1]) {
+      arrIsSorted.push('true')
+    } else {arrIsSorted.push('false')}
+  }
+  let resultIsSorted = true
+  for (let i = 0; i < arrIsSorted.length; i++) {
+    if (arrIsSorted[i] === 'false') {
+      resultIsSorted = false
+      break
+    }
+  }
+  return resultIsSorted
+}
+console.log(isSorted([1, 9, -8, 0, -Infinity]))
+console.log(isSorted([-Infinity, -9, 0, 1, 10, 45]))
